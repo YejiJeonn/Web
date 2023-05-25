@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function randomInt(){ // 1~9의 십진 난수 리턴
+      return Math.floor(Math.random()*9)+1;
+    }
+  </script>
+</head>
+<body>
+  <h3>Main을 활용한 구구단 연습</h3>
+  <hr>
+  <script>
+    // 구구단 문제 생상
+
+    // 텍스트 값으로 문제 quiz에 넣기
+    let quiz = randomInt() + " * " + randomInt();
+
+    // 사용자로부터 답 입력
+    let user = prompt(quiz + "값은 얼마 입니까?", 0);
+    // 취소 버튼이 클릭된 경우
+    if(user == null){
+      document.write("구구단 연습을 종료합니다.");
+    }
+    else{
+      // 구구단 정답 계산
+      let ans = eval(quiz);
+      // 정답과 입력값 비교
+      if(ans == user){
+        document.write("정답!<br>");
+      }
+      else{
+        document.write("아니오!<br>");
+      }
+      document.write(quiz + " = " + "<strong>" + ans + "</strong> 입니다.<br>");
+    }
+  </script>
+</body>
+</html>
